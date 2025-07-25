@@ -1,2 +1,3 @@
-# mydira-app
+# MyDira
+
 MyDira rental listings site
