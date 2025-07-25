@@ -1,6 +1,6 @@
 'use client';
-import { supabase } from '../../lib/supabase';
 import { useEffect, useState } from 'react';
+import { supabase } from '../../lib/supabase';
 import Image from 'next/image';
 
 type Listing = {
@@ -16,10 +16,9 @@ export default function ListingsPage() {
 
   useEffect(() => {
     const fetchListings = async () => {
-      const supabase = createClient();
       const { data, error } = await supabase.from('listings').select('*');
       if (error) console.error('Error fetching listings:', error);
-      else setListings(data);
+      else setListings(data || []);
     };
 
     fetchListings();
